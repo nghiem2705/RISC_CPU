@@ -14,7 +14,7 @@ module RAM_WRAPPER #(
 
 wire [DATA_WIDTH - 1 : 0] data ; 
 assign data = (wr && data_e) ? data_w : {DATA_WIDTH{1'bz}} ;
-assign data_r = data ;
+assign data_r = (rd) ? data : {DATA_WIDTH{1'b0}};
 // RAM module 
 
 RAM #(

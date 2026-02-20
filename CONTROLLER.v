@@ -78,7 +78,7 @@ always @(posedge clk or negedge n_rst) begin
             OP_ADDR : begin
                 if (op_code == HLT) begin
                     halt <= 1'b1;
-                    inc_pc <= 1'b1;
+                    inc_pc <= 1'b0;
                     state <= OP_ADDR;
                 end
                 else begin
